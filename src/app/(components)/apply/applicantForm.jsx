@@ -10,8 +10,9 @@ const onFinishFailed = (errorInfo) => {
 };
 const UserForm = () => (
   <Form
-    className="w-[90%] self-center"
+    className="w-[80%] self-center"
     layout="vertical"
+    size="large"
     name="basic"
     wrapperCol={{ span: 16 }}
     style={{ maxWidth: "100%" }}
@@ -34,6 +35,15 @@ const UserForm = () => (
       rules={[{ required: true, message: "Please input your password!" }]}
     >
       <Input.Password />
+    </Form.Item>
+    <Form.Item
+      label="job"
+      name="job"
+      rules={[
+        { required: true, message: "Please the job you're applying for" },
+      ]}
+    >
+      <Input />
     </Form.Item>
     <Form.Item label="country" name="country">
       <Select
@@ -61,15 +71,6 @@ const UserForm = () => (
       rules={[{ required: true, message: "Please enter your phone number!" }]}
     >
       <InputNumber style={{ width: "100%" }} />
-    </Form.Item>
-    <Form.Item
-      label="job"
-      name="job"
-      rules={[
-        { required: true, message: "Please the job you're applying for" },
-      ]}
-    >
-      <Input />
     </Form.Item>
     <Form.Item name="remember" valuePropName="checked" label={null}>
       <Checkbox>Remember me</Checkbox>

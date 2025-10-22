@@ -1,6 +1,6 @@
 import Image from "next/image";
 import './globals.css'
-import UserForm from "./(components)/Candidates/applicantForm";
+import UserForm from "./(components)/apply/applicantForm";
 import Main from "./(components)/main/main";
 
 export default function Home() {
