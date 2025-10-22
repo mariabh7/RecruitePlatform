@@ -1,6 +1,9 @@
 import { Inter } from 'next/font/google'
 import React from 'react'
 import './globals.css'
+import { language } from './(components)/ui/Language'
+import { brightnessUp } from './(components)/ui/brightnessUp'
+import { moon } from './(components)/ui/moon'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -15,15 +18,15 @@ export default function RootLayout({ children }) {
         <div className='bg-white relative  '>
           <header className='flex fixed z-50 top-0 w-full bg-zinc-50 border-b border-gray-200 justify-between items-center py-4 md:py-6 px-6 md:px-20'>
             <div>
-              <p className='font-bold capitalize text-xl md:text-2xl'>recruitersPlatform</p>
+              <p className='font-bold capitalize text-xl md:text-2xl'>recruitingPlatform</p>
             </div>
-            <div className='flex justify-start gap-3'>
-              <div>
-
-                <span>lan</span>
+            <div className='flex justify-start gap-5'>
+              <div className='ls'>
+                {language()}
+                <span>language</span>
               </div>
-              <div>
-
+              <div className='ls'>
+                {brightnessUp()}
                 <span>mode</span>
               </div>
             </div>

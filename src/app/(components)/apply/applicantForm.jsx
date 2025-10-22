@@ -12,35 +12,35 @@ const UserForm = () => (
   <Form
     className="w-[80%] self-center"
     layout="vertical"
-    size="large"
+    size="default"
     name="basic"
     wrapperCol={{ span: 16 }}
-    style={{ maxWidth: "100%" }}
+    style={{ maxWidth: "100%", height: 600 }}
     initialValues={{ remember: true }}
     onFinish={onFinish}
     onFinishFailed={onFinishFailed}
     autoComplete="off"
   >
     <Form.Item
-      label="Username"
-      name="username"
-      rules={[{ required: true, message: "Please input your username!" }]}
+      label="Name"
+      name="Name"
+      rules={[{ required: true, message: "Please input your Name!" }]}
     >
       <Input />
     </Form.Item>
 
     <Form.Item
-      label="Password"
-      name="password"
-      rules={[{ required: true, message: "Please input your password!" }]}
+      label="last Name"
+      name="lastName"
+      rules={[{ required: true, message: "Please input your last Name!" }]}
     >
-      <Input.Password />
+      <Input />
     </Form.Item>
     <Form.Item
       label="job"
       name="job"
       rules={[
-        { required: true, message: "Please the job you're applying for" },
+        { required: true, message: "Please enter the job you're applying for" },
       ]}
     >
       <Input />
@@ -55,18 +55,8 @@ const UserForm = () => (
         rules={[{ required: true, message: "Please select an option" }]}
       />
     </Form.Item>
-    <Form.Item label="state" name="state">
-      <Select
-        showSearch
-        options={[
-          { value: "sample", label: <span>sample</span> },
-          { value: "red", label: <span>red</span> },
-        ]}
-        rules={[{ required: true, message: "Please select an option" }]}
-      />
-    </Form.Item>
     <Form.Item
-      label="number"
+      label="phone number"
       name="number"
       rules={[{ required: true, message: "Please enter your phone number!" }]}
     >
