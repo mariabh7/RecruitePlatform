@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Button, Checkbox, Form, Input, Select } from "antd";
+import { Button, Checkbox, Form, Input, InputNumber, Select } from "antd";
 
 const onFinish = (values) => {
   console.log("Success:", values);
@@ -54,6 +54,13 @@ const UserForm = () => (
         ]}
         rules={[{ required: true, message: "Please select an option" }]}
       />
+    </Form.Item>
+    <Form.Item
+      label="number"
+      name="number"
+      rules={[{ required: true, message: "Please enter your phone number!" }]}
+    >
+      <InputNumber style={{ width: "100%" }} />
     </Form.Item>
     <Form.Item
       label="job"

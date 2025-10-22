@@ -1,5 +1,5 @@
 import { Inter } from 'next/font/google'
-
+import React from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -10,7 +10,28 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className='bg-white relative  '>
+          <header className='flex fixed top-0 w-full bg-zinc-100 justify-between items-center py-6 px-20'>
+            <div>
+              <p className='font-bold capitalize text-2xl'>recruitersPlatform</p>
+            </div>
+            <div className='flex justify-start gap-3'>
+              <div>
+
+                <span>lan</span>
+              </div>
+              <div>
+
+                <span>mode</span>
+              </div>
+            </div>
+          </header>
+          <main>
+            {children}
+          </main>
+        </div>
+      </body>
     </html>
   )
 }
