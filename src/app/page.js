@@ -1,10 +1,10 @@
 import Image from "next/image";
 import './globals.css'
-import UserForm from "./Candidates/UserForm";
+import UserForm from "./.components/Candidates/applicantForm";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center  bg-zinc-50 font-sans dark:bg-black">
+    <div className="flex  min-h-screen items-center  justify-center  bg-zinc-50 font-sans dark:bg-black">
       <UserForm />
     </div>
   );
