@@ -17,7 +17,7 @@ const InfoCard = ({ applicant }) => {
         cover={<div className="w-full h-[50px] bg-gray-100" />}
         actions={[
           <Button variant="solid" size="large" color="default">
-            {trans("hire")}
+            <span className="capitalize">{trans("hire")}</span>
           </Button>,
         ]}
       >

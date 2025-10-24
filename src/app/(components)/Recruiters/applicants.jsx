@@ -39,7 +39,7 @@ const Applicants = () => {
   return (
     <div className="flex flex-col justify-center mb-10 items-center w-full">
       <div className="text-center mb-10 ">
-        <h2 className=" text-xl md:text-2xl font-semibold mb-3 ">
+        <h2 className="capitalize text-xl md:text-2xl font-semibold mb-3 ">
           {trans("title")}
         </h2>
         <p className="text-gray-400  text-sm md:text-base font-light">
@@ -59,7 +59,13 @@ const Applicants = () => {
               <Link
                 href={`/recruiters/${applicant?.Name}${applicant?.lastName} `}
               >
-                <Button variant="solid" color="default" type="link" key="view">
+                <Button
+                  variant="solid"
+                  size="large"
+                  color="default"
+                  type="link"
+                  key="view"
+                >
                   {trans("action")}
                 </Button>
               </Link>,
