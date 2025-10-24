@@ -38,18 +38,27 @@ const Applicants = () => {
 
   return (
     <div className="flex flex-col justify-center mb-10 items-center w-full">
-      <h2 className="text-2xl font-semibold mb-4  ">Applicants</h2>
+      <div className="text-center mb-10 ">
+        <h2 className=" text-xl md:text-2xl font-semibold mb-3 ">Applicants</h2>
+        <p className="text-gray-400  text-sm md:text-base font-light">
+          {" "}
+          See candidates and their informations in the list below
+        </p>
+      </div>
 
       <List
         loading={loading}
         itemLayout="horizontal"
-        style={{ width: "90%" }}
+        style={{ width: "80%" }}
+        size="large"
         dataSource={visibleApplicants}
         renderItem={(applicant) => (
           <List.Item
             actions={[
-              <Link href={`/recruiters/${applicant?.Name || "no one "}`}>
-                <Button type="link" key="view">
+              <Link
+                href={`/recruiters/${applicant?.Name}${applicant?.lastName} `}
+              >
+                <Button variant="solid" color="default" type="link" key="view">
                   View
                 </Button>
               </Link>,

@@ -10,12 +10,12 @@ const Main = () => {
         <Link href={"/apply"}>
           {" "}
           <Button variant="solid" color="default" size="large">
-            an applicant
+            An applicant
           </Button>
         </Link>
         <Link href={"/recruiters"}>
           <Button type="default" size="large" color="default" className="btn">
-            a recruiter
+            A recruiter
           </Button>{" "}
         </Link>
       </div>

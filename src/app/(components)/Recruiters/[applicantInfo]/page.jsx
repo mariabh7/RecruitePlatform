@@ -7,7 +7,9 @@ import { useSelector } from "react-redux";
 export default function ApplicantPage({ params }) {
   const { applicantInfo } = params;
   const data = useSelector((state) => state);
-  const applicant = data?.find((candidate) => candidate.Name == applicantInfo);
+  const applicant = data?.find(
+    (candidate) => `${candidate?.Name}${candidate?.lastName}` == applicantInfo
+  );
   console.log(applicant);
   return (
     <div className="flex justify-center items-center  h-screen bgs">

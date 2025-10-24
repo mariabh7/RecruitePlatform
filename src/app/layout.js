@@ -25,10 +25,7 @@ export default function RootLayout({ children }) {
                 {language()}
                 <span>language</span>
               </div>
-              <div className='ls'>
-                {brightnessUp()}
-                <span>mode</span>
-              </div>
+
             </div>
           </header>
           <main>
