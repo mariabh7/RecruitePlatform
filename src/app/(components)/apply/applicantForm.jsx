@@ -54,21 +54,19 @@ const UserForm = () => {
         if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
         const data = await res.json();
 
-        const AvailCountries = data
-          .map((country) => ({
-            value: country.name?.common,
-            label: (
-              <span className="flex items-center gap-2">
-                <img
-                  src={country.flags?.svg || country.flags?.png}
-                  alt={country.name?.common}
-                  className="w-5 h-4 object-cover"
-                />
-                {country.name?.common}
-              </span>
-            ),
-          }))
-          .sort((a, b) => a.value.localeCompare(b.value));
+        const AvailCountries = data.map((country) => ({
+          value: country.name?.common,
+          label: (
+            <span className="flex items-center gap-2">
+              <img
+                src={country.flags?.svg || country.flags?.png}
+                alt={country.name?.common}
+                className="w-5 h-4 object-cover"
+              />
+              {country.name?.common}
+            </span>
+          ),
+        }));
 
         setCountries(AvailCountries);
       } catch (error) {
