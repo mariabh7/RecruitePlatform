@@ -62,7 +62,11 @@ const Applicants = () => {
                   {applicant.name?.[0]?.toUpperCase() || "?"}
                 </Avatar>
               }
-              title={<span className="capitalize">{applicant.name}</span>}
+              title={
+                <span className="capitalize">
+                  {applicant.Name + applicant.lastName}
+                </span>
+              }
               description={applicant.email || "No email provided"}
             />
           </List.Item>
