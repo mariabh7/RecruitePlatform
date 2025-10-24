@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { List, Avatar, Button, Skeleton, Empty } from "antd";
+import Link from "next/link";
 
 const Applicants = () => {
   const Applicants = useSelector((state) => state);
@@ -47,24 +48,22 @@ const Applicants = () => {
         renderItem={(applicant) => (
           <List.Item
             actions={[
-              <Button
-                type="link"
-                key="view"
-                onClick={() => console.log("Viewing:", applicant)}
-              >
-                View
-              </Button>,
+              <Link href={`/recruiters/${applicant?.Name || "no one "}`}>
+                <Button type="link" key="view">
+                  View
+                </Button>
+              </Link>,
             ]}
           >
             <List.Item.Meta
               avatar={
                 <Avatar style={{ backgroundColor: "black" }}>
-                  {applicant.name?.[0]?.toUpperCase() || "?"}
+                  {applicant.Name?.[0]?.toUpperCase() || "?"}
                 </Avatar>
               }
               title={
                 <span className="capitalize">
-                  {applicant.Name + applicant.lastName}
+                  {`${applicant.Name} ${applicant.lastName}`}
                 </span>
               }
               description={applicant.email || "No email provided"}

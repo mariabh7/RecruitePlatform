@@ -15,6 +15,16 @@
   border-color: black !important;
 }
 
+.bgs {
+
+  background-color: #fff;
+  background-image:
+    linear-gradient(to right, #f8f6f6 1px, transparent 1px),
+    linear-gradient(to bottom, #f8f6f6 1px, transparent 1px);
+  background-size: 50px 50px;
+
+}
+
 .ls {
   @apply cursor-pointer flex justify-start gap-2 items-center
 }

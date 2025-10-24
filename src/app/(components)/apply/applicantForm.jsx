@@ -1,15 +1,29 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Checkbox, Form, Input, InputNumber, Select } from "antd";
 import { useDispatch, useSelector } from "react-redux";
+import { message } from "antd";
 import { MailOutlined } from "@ant-design/icons";
 const UserForm = () => {
+  const [messageApi, contextHolder] = message.useMessage();
   const dispatch = useDispatch();
+  const [sent, setSent] = useState(false);
+  useEffect(() => {
+    if (sent) {
+      setTimeout(() => {
+        messageApi.success(
+          "Thank you for filling out the form! Your application is being sent."
+        );
+      }, 100);
+      setSent(false); // reset flag to avoid multiple messages
+    }
+  }, [sent]);
   const HandleAddingApplicant = (values) => {
     dispatch({
       type: "add an applicant",
       user: values,
     });
+    setSent(true);
   };
   return (
     <Form

@@ -4,8 +4,8 @@ import React from "react";
 
 const Main = () => {
   return (
-    <div className="flex capitalize flex-col gap-10 justify-center items-center text-center">
-      <p className="text-gray-500">are you ?</p>
+    <div className="flex  capitalize flex-col gap-10 justify-center items-center text-center">
+      <p className="text-black font-light text-3xl">tell us who are you ?</p>
       <div className="flex justify-start   gap-5 ">
         <Link href={"/apply"}>
           {" "}
