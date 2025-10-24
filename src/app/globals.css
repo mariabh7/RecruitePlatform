@@ -25,6 +25,10 @@
 
 }
 
+.cardDivs {
+  @apply flex justify-start gap-3
+}
+
 .ls {
   @apply cursor-pointer flex justify-start gap-2 items-center
 }
