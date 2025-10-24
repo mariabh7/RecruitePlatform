@@ -4,7 +4,9 @@ import { Avatar, Button, Card } from "antd";
 import { IconMap } from "antd/es/result";
 import { Mail, MapIcon, Phone, Route } from "lucide-react";
 const { Meta } = Card;
+import { useTranslations } from "next-intl";
 const InfoCard = ({ applicant }) => {
+  const trans = useTranslations("InformationPage");
   const { Name, lastName, email, number, job, country } = applicant ?? null;
   return (
     <div>
@@ -15,7 +17,7 @@ const InfoCard = ({ applicant }) => {
         cover={<div className="w-full h-[50px] bg-gray-100" />}
         actions={[
           <Button variant="solid" size="large" color="default">
-            Hire Candidate
+            {trans("hire")}
           </Button>,
         ]}
       >
@@ -29,16 +31,16 @@ const InfoCard = ({ applicant }) => {
           description={
             <ul className="text-gray-600 text-[17px] mt-10 flex justify-start items-start flex-col gap-2">
               <li className="cardDivs">
-                <MapIcon /> <strong>country</strong> {country || "—"}
+                <MapIcon /> <strong>{trans("country")}</strong> {country || "—"}
               </li>
               <li className="cardDivs">
                 <Mail /> <strong>email</strong> {email || "—"}
               </li>
               <li className="cardDivs">
-                <Phone /> <strong>phone number</strong> {number || "—"}
+                <Phone /> <strong>{trans("number")}</strong> {number || "—"}
               </li>
               <li className="cardDivs">
-                <Route /> <strong>job</strong> {job || "—"}
+                <Route /> <strong>{trans("job")}</strong> {job || "—"}
               </li>
             </ul>
           }

@@ -1,0 +1,32 @@
+{
+  "Main": {
+    "title": "RecruitingPlatform",
+    "text": "tell us who are you",
+    "option1": "An applicant",
+    "option2": "a recruiter"
+  },
+  "apply": {
+    "title": "apply for the job here",
+    "name": "name",
+    "lastname": "Last Name",
+    "job": "job",
+    "country": "country",
+    "number": "phone number",
+    "submit": "submit",
+    "hire": "hire candidate",
+    "obligation": "please enter your "
+  },
+  "recruitersPage": {
+    "title": "applicants",
+    "text": "See candidates and their informations in the list below",
+    "action": "view",
+    "notfound": "No applicants found"
+  },
+  "InformationPage": {
+    "job": "job",
+    "country": "country",
+    "number": "phone number",
+    "hire": "hire candidate",
+    "notfound": "sorry, we didn't find the applicant you're looking for"
+  }
+}

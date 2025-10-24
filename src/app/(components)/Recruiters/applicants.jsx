@@ -3,13 +3,13 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { List, Avatar, Button, Skeleton, Empty } from "antd";
 import Link from "next/link";
-
+import { useTranslations } from "next-intl";
 const Applicants = () => {
   const Applicants = useSelector((state) => state);
   const [visibleApplicants, setVisibleApplicants] = useState([]);
   const [loading, setLoading] = useState(true);
   const [Limit, setLimit] = useState(5);
-
+  const trans = useTranslations("recruitersPage");
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisibleApplicants(Applicants.slice(0, Limit));
@@ -31,7 +31,7 @@ const Applicants = () => {
   if (!Applicants.length && !loading) {
     return (
       <div className="flex justify-center items-center h-64">
-        <Empty description="No applicants found" />
+        <Empty description={trans("notfound")} />
       </div>
     );
   }
@@ -39,10 +39,11 @@ const Applicants = () => {
   return (
     <div className="flex flex-col justify-center mb-10 items-center w-full">
       <div className="text-center mb-10 ">
-        <h2 className=" text-xl md:text-2xl font-semibold mb-3 ">Applicants</h2>
+        <h2 className=" text-xl md:text-2xl font-semibold mb-3 ">
+          {trans("title")}
+        </h2>
         <p className="text-gray-400  text-sm md:text-base font-light">
-          {" "}
-          See candidates and their informations in the list below
+          {trans("text")}
         </p>
       </div>
 
@@ -59,7 +60,7 @@ const Applicants = () => {
                 href={`/recruiters/${applicant?.Name}${applicant?.lastName} `}
               >
                 <Button variant="solid" color="default" type="link" key="view">
-                  View
+                  {trans("action")}
                 </Button>
               </Link>,
             ]}

@@ -1,0 +1,31 @@
+{
+  "Main": {
+    "title": "plataformaDeRecrutamento",
+    "text": "Diga-nos quem você é",
+    "option1": "Um candidato",
+    "option2": "Um recrutador"
+  },
+  "apply": {
+    "title": "Candidate-se aqui",
+    "name": "nome",
+    "lastname": "sobrenome",
+    "job": "cargo",
+    "country": "país",
+    "number": "número de telefone",
+    "submit": "enviar",
+    "obligation": "Por favor, insira seu "
+  },
+  "recruitersPage": {
+    "title": "Candidatos",
+    "text": "Veja os candidatos e suas informações na lista abaixo.",
+    "action": "consultar",
+    "notfound": "Nenhum candidato encontrado"
+  },
+  "InformationPage": {
+    "job": "cargo",
+    "country": "país",
+    "number": "número de telefone",
+    "hire": "Contratar o candidato",
+    "notfound": "Desculpe, não encontramos o candidato que você procura"
+  }
+}

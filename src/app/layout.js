@@ -4,6 +4,7 @@ import './globals.css'
 import { language } from './(components)/ui/Language'
 import { brightnessUp } from './(components)/ui/brightnessUp'
 import { moon } from './(components)/ui/moon'
+import { NextIntlClientProvider } from 'next-intl';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -15,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className='bg-white relative  '>
+        <NextIntlClientProvider> <div className='bg-white relative  '>
           <header className='flex fixed z-50 top-0 w-full bg-zinc-50 border-b border-gray-200 justify-between items-center py-4 md:py-6 px-6 md:px-20'>
             <div>
               <p className='font-bold capitalize text-xl md:text-2xl'>recruitingPlatform</p>
@@ -25,13 +26,12 @@ export default function RootLayout({ children }) {
                 {language()}
                 <span>language</span>
               </div>
-
             </div>
           </header>
           <main>
             {children}
           </main>
-        </div>
+        </div></NextIntlClientProvider>
       </body>
     </html>
   )

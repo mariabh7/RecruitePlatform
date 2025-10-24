@@ -11,8 +11,9 @@ import {
 } from "antd";
 import { useDispatch } from "react-redux";
 import { MailOutlined } from "@ant-design/icons";
-
+import { useTranslations } from "next-intl";
 const UserForm = () => {
+  const trans = useTranslations("apply");
   const [messageApi, contextHolder] = message.useMessage();
   const dispatch = useDispatch();
   const [sent, setSent] = useState(false);
@@ -102,17 +103,27 @@ const UserForm = () => {
         autoComplete="off"
       >
         <Form.Item
-          label="Name"
+          label={trans("name")}
           name="Name"
-          rules={[{ required: true, message: "Please input your Name!" }]}
+          rules={[
+            {
+              required: true,
+              message: `${trans("obligation")} ${trans("name")}`,
+            },
+          ]}
         >
           <Input />
         </Form.Item>
 
         <Form.Item
-          label="Last Name"
+          label={trans("lastname")}
           name="lastName"
-          rules={[{ required: true, message: "Please input your last name!" }]}
+          rules={[
+            {
+              required: true,
+              message: `${trans("obligation")} ${trans("lastname")}`,
+            },
+          ]}
         >
           <Input />
         </Form.Item>
@@ -121,8 +132,14 @@ const UserForm = () => {
           label="Email"
           name="email"
           rules={[
-            { required: true, message: "Please enter your email!" },
-            { type: "email", message: "Please enter a valid email!" },
+            {
+              required: true,
+              message: `${trans("obligation")} email`,
+            },
+            {
+              type: "email",
+              message: `${trans("obligation")} valid email `,
+            },
           ]}
         >
           <Input
@@ -133,12 +150,12 @@ const UserForm = () => {
         </Form.Item>
 
         <Form.Item
-          label="Job"
+          label={trans("job")}
           name="job"
           rules={[
             {
               required: true,
-              message: "Please enter the job you're applying for",
+              message: `${trans("obligation")} ${trans("job")}`,
             },
           ]}
         >
@@ -146,9 +163,14 @@ const UserForm = () => {
         </Form.Item>
 
         <Form.Item
-          label="Country"
+          label={trans("country")}
           name="country"
-          rules={[{ required: true, message: "Please select a country" }]}
+          rules={[
+            {
+              required: true,
+              message: `${trans("obligation")} ${trans("country")}`,
+            },
+          ]}
         >
           <Select
             showSearch
@@ -160,28 +182,26 @@ const UserForm = () => {
         </Form.Item>
 
         <Form.Item
-          label="Phone Number"
+          label={trans("number")}
           name="number"
           rules={[
-            { required: true, message: "Please enter your phone number!" },
+            {
+              required: true,
+              message: `${trans("obligation")} ${trans("number")}`,
+            },
           ]}
         >
           <InputNumber style={{ width: "100%" }} />
         </Form.Item>
-
-        <Form.Item name="remember" valuePropName="checked" label={null}>
-          <Checkbox>Remember me</Checkbox>
-        </Form.Item>
-
         <Form.Item label={null}>
           <Button
             variant="solid"
             color="default"
             size="large"
-            className="w-full text-center"
+            className="w-full mt-5 text-center"
             htmlType="submit"
           >
-            Submit
+            {trans("submit")}
           </Button>
         </Form.Item>
       </Form>
