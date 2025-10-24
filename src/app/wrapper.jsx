@@ -9,14 +9,11 @@ const Wrapper = ({ children }) => {
   const [locale, setLocale] = useState("en");
   const [messages, setMessages] = useState(null);
 
-  // Load messages dynamically when locale changes
   useEffect(() => {
     import(`../../messages/${locale}.json`)
       .then((mod) => setMessages(mod.default))
       .catch(() => console.error(`Missing messages for locale: ${locale}`));
   }, [locale]);
-
-  // Wait for messages to load
   if (!messages) return null;
 
   return (
